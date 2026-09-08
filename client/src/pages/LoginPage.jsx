@@ -27,7 +27,7 @@ export default function LoginPage() {
     setSubmitting(true);
     try {
       const payload = override || { email, password };
-      await login(payload);
+      const data = await login(payload);
       const from = location.state?.from?.pathname;
       const roleHome = {
         PATIENT: '/patient',
@@ -36,7 +36,7 @@ export default function LoginPage() {
         PHARMACIST: '/pharmacy',
         ADMIN: '/admin',
       };
-      navigate(from || roleHome[payload.role], { replace: true });
+      navigate(from || roleHome[data.user.role], { replace: true });
     } catch (err) {
       toast.error(errorMessage(err, 'Login failed'));
     } finally {
