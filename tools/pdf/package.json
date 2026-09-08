@@ -1,0 +1,12 @@
+{
+  "name": "proposal-pdf",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "dependencies": {
+    "pdfkit": "^0.15.0"
+  }
+}
