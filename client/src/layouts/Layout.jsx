@@ -42,7 +42,7 @@ const NAV = {
 function NavItems({ role }) {
   const items = NAV[role] || [];
   return (
-    <nav className="flex flex-1 flex-col gap-1 px-3">
+    <nav className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto px-3">
       {items.map((item) => (
         <NavLink
           key={item.to}
@@ -74,7 +74,7 @@ export default function Layout() {
   const displayName = user.name || `${user.firstName || ''} ${user.lastName || ''}`.trim() || user.email;
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex h-screen overflow-hidden">
       <aside className="flex w-64 shrink-0 flex-col bg-brand-700">
         <div className="flex items-center gap-3 px-5 py-5">
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/20 text-lg">

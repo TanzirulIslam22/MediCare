@@ -45,17 +45,17 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-100 p-4">
-      <div className="w-full max-w-md">
-        <div className="mb-6 text-center">
-          <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 text-3xl">
+    <div className="flex min-h-screen bg-slate-100 p-4">
+      <div className="m-auto w-full max-w-md">
+        <div className="mb-4 flex flex-col items-center text-center">
+          <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-600 text-2xl">
             🏥
           </div>
-          <h1 className="text-2xl font-bold text-slate-800">MediCare HMS</h1>
-          <p className="mt-1 text-sm text-slate-500">Hospital Management System</p>
+          <h1 className="text-xl font-bold text-slate-800">MediCare HMS</h1>
+          <p className="mt-0.5 text-sm text-slate-500">Hospital Management System</p>
         </div>
 
-        <form onSubmit={doLogin} className="card space-y-4">
+        <form onSubmit={doLogin} className="card space-y-3">
           <div>
             <label className="label">Email</label>
             <input
@@ -83,11 +83,11 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <div className="mt-4 rounded-xl border border-dashed border-slate-300 bg-white/60 p-4">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
-            Demo accounts (click to fill)
+        <div className="mt-3 rounded-xl border border-dashed border-slate-300 bg-white/60 px-3 py-2.5">
+          <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Demo accounts
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {DEMO_CREDENTIALS.map((c) => (
               <button
                 key={c.role}
@@ -97,7 +97,7 @@ export default function LoginPage() {
                   setPassword(c.password);
                   doLogin(null, c);
                 }}
-                className="rounded-full border border-brand-200 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700 hover:bg-brand-100"
+                className="rounded-full border border-brand-200 bg-brand-50 px-2.5 py-1 text-xs font-medium text-brand-700 hover:bg-brand-100"
               >
                 {c.role}
               </button>
