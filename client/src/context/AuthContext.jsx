@@ -25,7 +25,7 @@ export function AuthProvider({ children }) {
     (async () => {
       try {
         const { data } = await authService.me();
-        if (mounted) setUser(data.user);
+        if (mounted) setUser(data.data.user);
       } catch (err) {
         // not logged in
       } finally {
@@ -43,8 +43,8 @@ export function AuthProvider({ children }) {
   const login = useCallback(
     async (payload) => {
       const { data } = await authService.login(payload);
-      applyAuth(data);
-      return data;
+      applyAuth(data.data);
+      return data.data;
     },
     [applyAuth]
   );
