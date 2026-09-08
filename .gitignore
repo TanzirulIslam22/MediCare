@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+client/node_modules/
+server/node_modules/
+tools/pdf/node_modules/
+
+# Build outputs
+client/dist/
+server/coverage/
+
+# Environment
+.env
+.env.local
+.env.production
+server/.env
+client/.env
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# MongoDB local data
+data/
+
+# Temp
+*.tmp
